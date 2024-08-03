@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جدول التمارين</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>جدول التمارين</h1>
+        <label for="days">عدد الأيام:</label>
+        <input type="number" id="days" min="1" max="7" value="3">
+        <input type="file" id="file-upload" accept=".txt">
+        <button id="load-file">تحميل التمارين</button>
+
+        <div id="exercise-container"></div>
+
+        <button id="print">طباعة</button>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        if (getCookie('loggedIn') !== 'true') {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
